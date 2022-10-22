@@ -1,4 +1,7 @@
 ---
+import Email from '../components/Email';
+import Socials from '../components/Socials';
+
 export interface Props {
 	title: string;
 }
@@ -7,7 +10,7 @@ const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-background">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -16,13 +19,13 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<Email />
+		<Socials />
+		<slot/>
 	</body>
 </html>
 <style is:global>
 	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
 	}
 	html {
 		font-family: system-ui, sans-serif;
@@ -31,5 +34,16 @@ const { title } = Astro.props;
 	code {
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 			Bitstream Vera Sans Mono, Courier New, monospace;
+	}
+	.wm-vlr {
+		writing-mode: vertical-lr;	
+	}
+
+	.socials-filter {
+		filter: invert(51%) sepia(68%) saturate(493%) hue-rotate(153deg) brightness(94%) contrast(90%)
+	}
+
+	.socials-filter:hover {
+		filter: brightness(0) saturate(100%) invert(83%) sepia(20%) saturate(1090%) hue-rotate(104deg) brightness(93%) contrast(95%);
 	}
 </style>

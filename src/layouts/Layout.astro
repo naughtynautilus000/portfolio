@@ -1,5 +1,6 @@
 ---
 import Email from '../components/Email';
+import Footer from '../components/Footer';
 import Socials from '../components/Socials';
 
 export interface Props {
@@ -18,10 +19,11 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="text-white">
 		<Email />
 		<Socials />
 		<slot/>
+		<Footer />
 	</body>
 </html>
 <style is:global>

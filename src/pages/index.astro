@@ -3,8 +3,46 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Nathan Andrews">
 	<main>
+		<section id="landing" class="h-screen flex justify-center items-center">
+			<div class="flex flex-col gap-4">
+				<p class="text-highlight text-4xl font-extralight">Hello, my name is</p>
+				<div>
+					<p class="text-6xl font-bold">Nathan Andrews.</p>
+					<p class="text-blue text-5xl font-bold">I build software.</p>
+				</div>
+				<p class="text-2xl leading-none font-extralight w-[25ch]">I'm a student at Brown University studying computer science.</p>
+				<ul class="text-highlight font-extralight text-3xl flex justify-start mt-2">
+					<li class="cursor-pointer py-[15px] px-[25px] border border-highlight rounded-3xl hover:text-background hover:bg-highlight transition-all"><a href="#work">See my work</a></li>
+				</ul>
+			</div>
+		</section>
+		<section id="about">
+			<div class="flex items-center gap-3 mb-[10px]">
+				<h2 class="text-4xl font-bold"><span class="text-highlight font-extralight text-2xl">01.</span> About Me</h2>
+				<div class="h-px w-[300px] bg-white"></div>
+			</div>
+			<div class="flex gap-[40px]">
+				<div class="w-[40ch] flex flex-col gap-[12px]">
+					<p>Hello! My name is Nathan and I enjoy creating all things software. My interest in software began in 2020 during the pandemic when I taught myself JavaScript to stay busy.</p>
+					<p>Since then I have been a student at <em class="not-italic text-highlight">Brown University</em> studying computer science and learning how to design and build good software.</p>
+					<p>In addition to my studies I am an incoming software engineering intern at <em class="not-italic text-highlight">Amazon</em>.</p>
+					<p>Here are some technologies that I've been using:</p>
+					<ul class="marker:text-highlight list-disc columns-2 pl-[40px]">
+						<li>Go</li>
+						<li>JavaScript (ES6+)</li>
+						<li>TypeScript</li>
+						<li>React</li>
+						<li>Figma</li>
+					</ul>
+				</div>
+				<div class="w-[255px] h-[255px] bg-gray-300 rounded-[20px]"></div>
+			</div>
+		</section>
+		<section id="work">
+			
+		</section>
 		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
 		<p class="instructions">
 			To get started, open the directory <code>src/pages</code> in your project.<br />
@@ -38,8 +76,8 @@ import Card from '../components/Card.astro';
 <style>
 	main {
 		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
+		/* padding:  0 1rem; */
+		max-width: 70ch;
 	}
 	h1 {
 		font-size: 3rem;

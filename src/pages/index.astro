@@ -1,6 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Feature from '../components/Feature';
+
+import * as FeaturedProject1 from './projects/project1.md'
+import * as FeaturedProject2 from './projects/project2.md'
+import * as FeaturedProject3 from './projects/project3.md'
+import ProjectCard from '../components/ProjectCard';
+
+const projects = (await Astro.glob('./projects/*.md')).filter(p => ![FeaturedProject1.url, FeaturedProject2.url, FeaturedProject3.url].includes(p.url));
 ---
 
 <Layout title="Nathan Andrews">
@@ -41,35 +48,24 @@ import Card from '../components/Card.astro';
 			</div>
 		</section>
 		<section id="work">
-			
+			<div class="flex items-center gap-3 mb-[10px]">
+				<h2 class="text-4xl font-bold"><span class="text-highlight font-extralight text-2xl">02.</span> Some Things I've Made</h2>
+				<div class="h-px w-[100px] bg-white">
+				</div>
+			</div>
+			<ul class="flex flex-col gap-[60px]" style={{width: "clamp(600px, 60vw, 800px)"}}>
+				<Feature file={FeaturedProject1.frontmatter} index={0} />
+				<Feature file={FeaturedProject2.frontmatter} index={1} />
+				<Feature file={FeaturedProject3.frontmatter} index={2} />
+			</ul>
+			<h3>Other Cool Projects</h3>
+			<a href="#">view all projects</a>
+			<ul>
+				{projects.map((p, idx) => 
+					<ProjectCard file={p.frontmatter} index={idx} />
+				)}
+			</ul>
 		</section>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
 	</main>
 </Layout>
 

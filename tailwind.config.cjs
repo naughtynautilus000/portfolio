@@ -7,7 +7,8 @@ module.exports = {
 				'white': '#cee8f3',
 				'highlight': '#52e5b9',
 				'background': '#0a192f',
-				'blue': '#319fce'
+				'blue': '#319fce',
+				'dark-blue': '#1b437e'
 			}
 		},
 	},

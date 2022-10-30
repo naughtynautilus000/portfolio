@@ -8,7 +8,7 @@ module.exports = {
 				'highlight': '#52e5b9',
 				'background': '#0a192f',
 				'blue': '#319fce',
-				'dark-blue': '#1b437e'
+				'dark-blue': '#10284C'
 			}
 		},
 	},

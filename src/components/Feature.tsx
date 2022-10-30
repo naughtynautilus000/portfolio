@@ -11,7 +11,7 @@ const Feature = ({file, index}: Props) => {
   const justifyContent = isEven ? "justify-end" : "justify-start"
 
   return (
-    <li key={index} className={`grid grid-cols-12 h-[250px] gap-[10px] ${textAlign}`}>
+    <li key={index} className={`grid grid-cols-12 h-[250px] gap-[10px] w-full ${textAlign}`}>
       <div className={`${colStartContent} col-span-7 row-start-1 row-span-full`}>
         <h5 className="text-highlight text-lg font-extralight gap-[10px]">Featured Project</h5>
         <h4 className="text-white text-2xl font-bold">{file.title}</h4>

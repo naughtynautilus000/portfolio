@@ -1,0 +1,20 @@
+---
+export interface Props {
+  file: Record<string, any>
+}
+
+const {file} = Astro.props
+---
+
+<li class="project-square aspect-square w-[25%] min-w-[250px] bg-dark-blue px-4 py-6 rounded-lg hover:scale-105 transition-all">
+  <a href={file.url} class="grid h-full">
+    <h4 class="h-fit text-blue font-bold text-md text-xl">{file.frontmatter.title}</h4>
+    <p class="h-auto">{file.frontmatter.description}</p>
+    <p class="h-fit text-xs text-blue self-end">{file.frontmatter.tags && file.frontmatter.tags.join(" · ")}</p>
+  </a>
+</li>
+<style>
+  .project-square {
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  }
+</style>

@@ -1,0 +1,15 @@
+<div id="socials" class="fixed w-fit flex flex-col justify-center items-center left-[75px] bottom-0 gap-2">
+  <ul class="flex flex-col gap-[10px]">
+    {[
+      ["https://github.com/NathanAndrews20", "src/static/github.svg", "github icon"],
+      ["https://www.linkedin.com/in/nathan-andrews-72ba29190", "src/static/linkedin.svg", "linkedin icon"]
+    ].map(([link, icon, altText]) => (
+      <li class="socials-filter hover:translate-y-[-5px] transition-all">
+        <a href={link}>
+          <img src={icon} alt={altText} class="h-[40px]"/>
+        </a>
+      </li>
+    ))}
+  </ul>
+  <div class="h-[125px] w-[2px] mr-[5px] bg-blue"></div>
+</div>

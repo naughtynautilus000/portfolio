@@ -1,7 +1,8 @@
 ---
-import Email from '../components/Email';
-import Footer from '../components/Footer';
-import Socials from '../components/Socials';
+import Email from '../components/Email.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Socials from '../components/Socials.astro';
 
 export interface Props {
 	title: string;
@@ -11,7 +12,7 @@ const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="bg-background scroll-smooth">
+<html lang="en" class="bg-background scroll-smooth min-h-screen">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -19,11 +20,12 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="text-white px-[200px]">
+	<body class="text-white min-h-screen flex flex-col relative">
+		<Header />
 		<Email />
 		<Socials />
 		<slot/>
-		<Footer />
+		<Footer/>
 	</body>
 </html>
 <style is:global>
@@ -47,5 +49,11 @@ const { title } = Astro.props;
 
 	.socials-filter:hover {
 		filter: brightness(0) saturate(100%) invert(83%) sepia(20%) saturate(1090%) hue-rotate(104deg) brightness(93%) contrast(95%);
+	}
+
+	@media (max-width: 1000px) {
+		#email, #socials {
+			display: none;
+		}
 	}
 </style>

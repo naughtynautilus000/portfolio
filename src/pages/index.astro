@@ -49,7 +49,7 @@ const projects = (await Astro.glob('./projects/*.md'))
 				<div class="w-[255px] h-[255px] bg-gray-300 rounded-[20px]"></div>
 			</div>
 		</section>
-		<section id="work" class="flex flex-col items-center">
+		<section id="work" class="flex flex-col items-center pt-[theme(height.header)]">
 			<div class="flex items-center gap-3 mb-[10px]">
 				<h2 class="text-4xl font-bold"><span class="text-highlight font-extralight text-2xl">02.</span> Some Things I've Made</h2>
 				<div class="h-px w-[100px] bg-white">
@@ -60,7 +60,7 @@ const projects = (await Astro.glob('./projects/*.md'))
 				<Feature file={FeaturedProject2.frontmatter} alignment="right" />
 				<Feature file={FeaturedProject3.frontmatter} alignment="left" />
 			</ul>
-			<h3 class="text-center text-3xl font-bold mt-[75px]">Other Cool Projects</h3>
+			<h3 class="text-center text-3xl font-bold mt-[theme(height.header)]">Other Cool Projects</h3>
 			<a href="/projects" class="block text-center text-highlight">view all projects</a>
 			<ul class="flex gap-8 justify-center flex-wrap mt-5 w-full">
 				{projects.map(p => <ProjectCard file={p} />)}
@@ -75,10 +75,6 @@ const projects = (await Astro.glob('./projects/*.md'))
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		width: calc(100% - 300px);
-	}
 	h1 {
 		font-size: 3rem;
 		font-weight: 800;
@@ -86,10 +82,11 @@ const projects = (await Astro.glob('./projects/*.md'))
 	}
 
 	#landing {
-		height: calc(100vh - 75px);
+		height: calc(100vh - theme(height.header));
 	}
 
 	section:not(#landing) {
+		/* This is to add the padding for the content of the main content minus the landing page */
 		max-width: 900px;
 	}
 </style>

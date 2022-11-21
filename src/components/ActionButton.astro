@@ -1,0 +1,10 @@
+---
+export interface Props {
+  href: string
+  text: string
+}
+
+const {href, text} = Astro.props
+---
+
+<a href={href} class="text-highlight font-extralight text-3xl justify-start w-fit block cursor-pointer py-[15px] px-[25px] border border-highlight rounded-3xl hover:text-background hover:bg-highlight transition-all">{text}</a>

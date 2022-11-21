@@ -7,6 +7,7 @@ import * as FeaturedProject2 from './projects/development.md'
 import * as FeaturedProject3 from './projects/interative_design.md'
 
 import ProjectCard from '../components/ProjectCard.astro';
+import ActionButton from '../components/ActionButton.astro';
 
 const projects = (await Astro.glob('./projects/*.md'))
 	.filter(p => ![FeaturedProject1.url, FeaturedProject2.url, FeaturedProject3.url].includes(p.url))
@@ -22,8 +23,10 @@ const projects = (await Astro.glob('./projects/*.md'))
 					<p class="text-blue text-7xl font-bold">I build software.</p>
 				</div>
 				<p class="text-2xl leading-none font-extralight w-[25ch]">I'm a student at Brown University studying computer science.</p>
-				<ul class="text-highlight font-extralight text-3xl flex justify-start mt-5">
-					<li><a href="#work" class="cursor-pointer py-[15px] px-[25px] border border-highlight rounded-3xl hover:text-background hover:bg-highlight transition-all">See my work</a></li>
+				<ul class=" font-extralight text-3xl flex justify-start mt-5">
+					<li>
+						<ActionButton href="#work" text="See my work"/>
+					</li>
 				</ul>
 			</div>
 		</section>
@@ -69,7 +72,7 @@ const projects = (await Astro.glob('./projects/*.md'))
 		<section id="contact" class="text-center flex flex-col justify-center items-center gap-[10px] h-screen">
 			<h2 class="text-6xl font-bold"><span class="text-highlight font-extralight text-4xl">03.</span> Contact</h2>
 			<p class="text-2xl max-w-[41ch] font-light">My inbox is open! Feel free to ask questions or just say hi! I’ll do my best to get back to you!</p>
-			<a href="mailto:nandrews.personal@gmail.com" class="text-highlight font-extralight text-3xl justify-start mt-2 w-fit block cursor-pointer py-[15px] px-[25px] border border-highlight rounded-3xl hover:text-background hover:bg-highlight transition-all">Say Hi!</a>
+			<ActionButton href="mailto:nandrews.personal@gmail.com" text="Say Hi!" />
 		</section>
 	</main>
 </Layout>

@@ -51,8 +51,12 @@ const { title } = Astro.props;
 	}
 
 	@media (max-width: 1000px) {
-		#email, #socials {
+		div:has(#email), div:has(#socials) {
 			display: none;
+		}
+
+		main {
+			max-width: calc(100vw - theme(width.sides));
 		}
 	}
 </style>

@@ -23,7 +23,7 @@ const projects = (await Astro.glob('./projects/*.md'))
 					<p class="text-blue text-7xl font-bold">I build software.</p>
 				</div>
 				<p class="text-2xl leading-none font-extralight w-[25ch]">I'm a student at Brown University studying computer science.</p>
-				<ul class=" font-extralight text-3xl flex justify-start mt-5">
+				<ul class="font-extralight text-3xl flex justify-start mt-5">
 					<li>
 						<ActionButton href="#work" text="See my work"/>
 					</li>
@@ -88,8 +88,4 @@ const projects = (await Astro.glob('./projects/*.md'))
 		height: calc(100vh - theme(height.header));
 	}
 
-	section:not(#landing) {
-		/* This is to add the padding for the content of the main content minus the landing page */
-		max-width: 900px;
-	}
 </style>

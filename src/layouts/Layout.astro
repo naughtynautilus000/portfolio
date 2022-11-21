@@ -37,6 +37,11 @@ const { title } = Astro.props;
 		writing-mode: vertical-lr;	
 	}
 
+	main {
+		max-width: calc(100vw - calc(2 * theme(width.sides)));
+		margin: 0 auto
+	}
+
 	.socials-filter {
 		filter: invert(51%) sepia(68%) saturate(493%) hue-rotate(153deg) brightness(94%) contrast(90%)
 	}

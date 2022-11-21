@@ -12,7 +12,7 @@ const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="bg-background scroll-smooth min-h-screen">
+<html lang="en" class="bg-background scroll-smooth min-h-screen relative">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -20,7 +20,7 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="text-white min-h-screen flex flex-col relative">
+	<body class="text-white min-h-screen flex flex-col">
 		<Header />
 		<Email />
 		<Socials />

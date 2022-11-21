@@ -1,0 +1,27 @@
+---
+export interface Props {
+  file: Record<string, any>
+  alignment: "left" | "right"
+}
+
+const {file, alignment} = Astro.props
+
+const textAlign = alignment == "left" ? "text-start" : "text-end"
+const colStartContent = alignment == "left" ? "col-start-1" : "col-start-6"
+const colStartImage = alignment == "left" ? "col-start-6" : "col-start-1"
+const justifyContent = alignment == "left" ? "justify-start" : "justify-end"
+---
+
+<li class={`grid grid-cols-12 h-[250px] gap-[10px] w-full ${textAlign}`}>
+  <div class={`${colStartContent} col-span-7 row-start-1 row-span-full`}>
+    <h5 class="text-highlight text-lg font-extralight gap-[10px]">Featured Project</h5>
+    <h4 class="text-white text-2xl font-bold">{file.title}</h4>
+    <p class="bg-dark-blue h-auto p-[15px] rounded-lg shadow-[0_2px_5px_rgb(0,0,0)] my-4">{file.description}</p>
+    <ul class={`flex ${justifyContent} gap-[10px] text-white`}>
+      {file.tech.map((t: string) => 
+        <li>{t}</li>
+      )}
+    </ul>
+  </div>
+  <div class={`-z-10 ${colStartImage} col-span-7 row-start-1 row-span-full bg-gray-300`}></div>
+</li>

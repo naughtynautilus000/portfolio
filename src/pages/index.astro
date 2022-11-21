@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Feature from '../components/Feature';
+import Feature from '../components/Feature.astro';
 
 import * as FeaturedProject1 from './projects/portfolio.md'
 import * as FeaturedProject2 from './projects/development.md'
@@ -56,9 +56,9 @@ const projects = (await Astro.glob('./projects/*.md'))
 				</div>
 			</div>
 			<ul class="flex flex-col gap-[60px] items-center w-[80%]">
-				<Feature file={FeaturedProject1.frontmatter} index={0} />
-				<Feature file={FeaturedProject2.frontmatter} index={1} />
-				<Feature file={FeaturedProject3.frontmatter} index={2} />
+				<Feature file={FeaturedProject1.frontmatter} alignment="left" />
+				<Feature file={FeaturedProject2.frontmatter} alignment="right" />
+				<Feature file={FeaturedProject3.frontmatter} alignment="left" />
 			</ul>
 			<h3 class="text-center text-3xl font-bold mt-[75px]">Other Cool Projects</h3>
 			<a href="/projects" class="block text-center text-highlight">view all projects</a>

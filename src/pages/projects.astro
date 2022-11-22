@@ -1,0 +1,57 @@
+---
+import Layout from "../layouts/Layout.astro"
+const projects = (await Astro.glob("./projects/*.md"))
+  .sort((a, b) => {
+    const aYear = a.frontmatter.year as number || 0
+    const bYear = b.frontmatter.year as number || 0
+    const yearComp = bYear - aYear
+    if (yearComp !== 0) {
+      return yearComp
+    }
+    const aUrl = a.url as string
+    const bUrl = a.url as string
+    return bUrl.localeCompare(aUrl)
+  })
+---
+
+<Layout title="Projects">
+  <main class="flex flex-col gap-12">
+    <div class="mt-12">
+      <h1 class="font-bold text-6xl">The List</h1>
+      <p class="text-highlight">A long list of things I've worked on</p>
+    </div>
+    <table class="w-full">
+      <thead class="text-left text-2xl text-blue text-opacity-60">
+        <tr>
+          <th class="font-medium">Year</th>
+          <th class="font-medium">Title</th>
+          <th class="font-medium">Tags</th>
+          <th class="font-medium">Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        {projects.map(p => 
+          <tr class="h-8">
+            <td class="text-highlight font-light">{p.frontmatter.year || "year not found"}</td>
+            <td class="font-bold">{p.frontmatter.title || "title not found"}</td>
+            <td>
+              <ul class="flex flex-row">
+                {(p.frontmatter.tags || []).map((t: string) => <li>{t}</li>)}
+              </ul>
+            </td>
+            <td><a href={p.frontmatter.link || "#"}>Link</a></td>
+          </tr>
+        )}
+      </tbody>
+    </table>
+  </main>
+</Layout>
+<style>
+  li::after {
+    margin: 0 0.25rem;
+    content: "·";
+  }
+  li:last-child::after {
+    content: none;
+  }
+</style>

@@ -84,6 +84,10 @@ const projects = (await Astro.glob('./projects/*.md'))
 		margin: 0;
 	}
 
+	h2 {
+		color: theme(colors.white);
+	}
+
 	#landing {
 		height: calc(100vh - theme(height.header));
 	}

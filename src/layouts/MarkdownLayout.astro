@@ -1,8 +1,18 @@
 ---
 import Layout from "./Layout.astro"
-
+const {frontmatter} = Astro.props
 ---
 
-<Layout title="title">
-  <slot />
+<Layout title={ frontmatter.title }>
+  <main>
+    <h1 class="mt-8 font-bold text-6xl">{frontmatter.title}</h1>
+    <slot />
+  </main>
 </Layout>
+<style is:global>
+  h2 {
+    font-size: theme(fontSize.4xl);
+    color: theme(colors.highlight);
+    font-weight: theme(fontWeight.extralight);
+  }
+</style>

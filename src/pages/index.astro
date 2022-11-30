@@ -13,7 +13,7 @@ const projects = (await Astro.glob('./projects/*.md'))
 	.filter(p => ![FeaturedProject1.url, FeaturedProject2.url, FeaturedProject3.url].includes(p.url))
 ---
 
-<Layout title="Nathan Andrews">
+<Layout title="Nathan Andrews" footerAbsolute>
 	<main class="flex flex-col gap-[100px] items-center">
 		<section id="landing" class="flex justify-center items-center">
 			<div class="flex flex-col gap-4">

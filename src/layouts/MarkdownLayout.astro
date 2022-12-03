@@ -5,14 +5,67 @@ const {frontmatter} = Astro.props
 
 <Layout title={ frontmatter.title }>
   <main>
-    <h1 class="mt-8 font-bold text-6xl">{frontmatter.title}</h1>
-    <slot />
+    <article>
+      <h1 class="mt-8 font-bold text-6xl">{frontmatter.title}</h1>
+      <slot />
+    </article>
   </main>
 </Layout>
 <style is:global>
-  h2 {
+
+  article h2 {
+    margin: 15px 0;
     font-size: theme(fontSize.4xl);
+    color: theme(colors.blue);
+    font-weight: theme(fontWeight.normal);
+  }
+
+  article h2::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: theme(colors.dark-blue);
+  }
+
+  article h3 {
+    font-size: theme(fontSize.3xl);
+    font-weight: theme(fontWeight.normal);
+    color: theme(colors.white);
+  }
+
+  article h4 {
+    font-style: italic;
+    font-size: theme(fontSize.2xl);
+    font-weight: theme(fontWeight.normal);
+    color: theme(colors.white);
+  }
+
+  article a {
+    text-decoration: underline;
     color: theme(colors.highlight);
-    font-weight: theme(fontWeight.extralight);
+  }
+
+  article p {
+    margin-bottom: theme(margin.5);
+  }
+
+  article ul + p {
+    margin-top: theme(margin.5);
+  }
+
+  article ul {
+    padding-left: 40px;
+    list-style: disc;
+  }
+
+  article .single-image {
+    display: block;
+    margin: auto;
+    border: solid 5px theme(colors.blue);
+  }
+
+  article .single-image img {
+    width: 100%;
+    height: auto;
   }
 </style>

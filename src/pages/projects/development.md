@@ -7,6 +7,99 @@ year: 2022
 layout: "../../layouts/MarkdownLayout.astro"
 ---
 
-## Introduction
+## Overview
 
-This is the introduction.
+The Development project is a class project done for CSCI1300: UI/UX. In this
+project, I was tasked to create an interactive list-based user interface with
+the [React](https://reactjs.org/) library. You can interact with my interface
+[here](https://naughtynautilus000.github.io/development/).
+
+## Goals & Requirements
+
+The goal of the Development project is to create a list-based user interface
+using React.
+
+The first key feature of this interface is the list of items. The interface
+must include a list of at least 12 _item cards_ which all follow a theme. This
+might be pastries on a bakery site.
+
+The second key feature of this interface is the _aggregator_. The aggregator is
+a component that collects item cards selected by the user and displays data
+specific to the item cards aggregated by the user. An example of an aggregator
+is a shopping cart where the aggregated data is the total price of all the items
+in the cart.
+
+In addition to the aggregator, the user interface must include the following
+features:
+
+- A method to add and remove item cards from the aggregator.
+- A _sort feature_ that allows the user to sort the item cards by at least one
+  attribute.
+- A _filter feature_ that allows the user to filter the items cards by at least
+  two attributes.
+- All components on the interface should be visible
+- The list of card items and the aggregator must be on _one_ page.
+
+## Project Implementation
+
+### The Item Cards
+
+The theme I chose for my interface was the NBA. The list items cards is the list
+of the [2022 NBA All-Stars](https://www.nba.com/allstar/2022/all-star-roster).
+Each item card displays the following information:
+
+- The player's name
+- An image of the player
+- Which All-Star team the player was one
+- The total number of All-Star teams the player has made for their career
+- The total number of All-NBA teams the player has made for their career
+
+Additionally, each item card has a button that the user can click to add the
+player to their favorites. Below is an image of the item card for LeBron James:
+
+<span class="single-image w-1/2">![LeBron James item card](/pages/development/item_card.png)</span>
+
+### The Aggregator
+
+The aggregator for my interface collects the users favorite players. The user
+adds players to the aggregator using the Add to Favorites button. The interface
+then displays two aggregated values: the average number of All-Star teams that
+the user's favorite players have made, and the average number of All-NBA teams
+that the user's favorite players have made.
+
+### The Sort and Filter Features
+
+<span class="single-image w-1/2">![LeBron James item card](/pages/development/menu.png)</span>
+
+#### Sorting
+
+My interface allows users to sort players by three values:
+
+- Popularity (Number of All-Star votes received)
+- Number of All-Star appearances
+- Number of All-NBA appearances
+
+Users can only sort by at most one value at once.
+
+#### Filtering
+
+The filters for my interface are broken into four groups:
+
+- Team
+- Starter/Reserve
+- Position
+- Other (first-time All-Stars, and user Favorites)
+
+For the Team, Starter/Reserve, and Position groups, there is a set of 2-3
+_mutually-exclusive_ options that the user can choose from. The user may select
+at most one option from each of these three groups.
+
+The option in the "Other" group are not mutually exclusive, so the user may
+select any number of options in this group.
+
+#### Reset
+
+At the bottom of the menu there is a reset button which will clear the user's
+favorite players, clear all of the user's selected filters, and set the selected
+sort option to popularity. This is the initial state of the interface when the
+user first loads the page.

@@ -6,6 +6,8 @@ description: "An interactive user interface using React."
 year: 2022
 layout: "../../layouts/MarkdownLayout.astro"
 ---
+import Link from "../../components/Link.astro"
+export const components = {a: Link}
 
 ## Overview
 
@@ -69,8 +71,11 @@ that the user's favorite players have made.
 
 ### The Sort and Filter Features
 
-<span class="single-image w-1/2">![LeBron James item card](/pages/development/menu.png)</span>
-
+<div class="flex flex-row gap-10">
+<div class="relative flex-auto">
+<img src="/pages/development/menu.png" alt="interface menu" class="absolute max-h-full w-auto"/>
+</div>
+<div class="content flex-[2]">
 #### Sorting
 
 My interface allows users to sort players by three values:
@@ -103,3 +108,5 @@ At the bottom of the menu there is a reset button which will clear the user's
 favorite players, clear all of the user's selected filters, and set the selected
 sort option to popularity. This is the initial state of the interface when the
 user first loads the page.
+</div>
+</div>

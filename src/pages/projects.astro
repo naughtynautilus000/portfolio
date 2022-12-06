@@ -35,7 +35,7 @@ const projects = (await Astro.glob("./projects/*.mdx"))
             <td class="text-highlight font-light">{p.frontmatter.year || "year not found"}</td>
             <td class="font-bold">{p.frontmatter.title || "title not found"}</td>
             <td>
-              <ul class="flex flex-row">
+              <ul class="flex flex-row flex-wrap">
                 {(p.frontmatter.tags || []).map((t: string) => <li>{t}</li>)}
               </ul>
             </td>

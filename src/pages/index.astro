@@ -2,14 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import Feature from '../components/Feature.astro';
 
-import * as FeaturedProject1 from './projects/portfolio.md'
+import * as FeaturedProject1 from './projects/portfolio.mdx'
 import * as FeaturedProject2 from './projects/development.mdx'
-import * as FeaturedProject3 from './projects/interative_design.md'
+import * as FeaturedProject3 from './projects/interative_design.mdx'
 
 import ProjectCard from '../components/ProjectCard.astro';
 import ActionButton from '../components/ActionButton.astro';
 
-const projects = (await Astro.glob('./projects/*.md'))
+const projects = (await Astro.glob('./projects/*.mdx'))
 	.filter(p => ![FeaturedProject1.url, FeaturedProject2.url, FeaturedProject3.url].includes(p.url))
 ---
 

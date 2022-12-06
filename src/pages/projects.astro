@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro"
-const projects = (await Astro.glob("./projects/*.md"))
+const projects = (await Astro.glob("./projects/*.mdx"))
   .sort((a, b) => {
     const aYear = a.frontmatter.year as number || 0
     const bYear = b.frontmatter.year as number || 0

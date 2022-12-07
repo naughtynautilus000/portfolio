@@ -49,13 +49,22 @@ const {frontmatter} = Astro.props
     margin-bottom: theme(margin.5);
   }
 
-  article ul + p {
+  article ul + p, article ol + p, article blockquote + p  {
     margin-top: theme(margin.5);
   }
 
   article ul {
-    padding-left: 40px;
     list-style: disc;
+    padding-left: theme(padding.indent);
+  }
+
+  article ol {
+    list-style: decimal;
+    padding-left: theme(padding.indent);
+  }
+
+  article figcaption {
+    font-style: italic;
   }
 
   article .single-image {
@@ -66,5 +75,24 @@ const {frontmatter} = Astro.props
   article .single-image img {
     width: 100%;
     height: auto;
+  }
+
+  article blockquote {
+    width: 100%;
+    font-style: italic;
+    display: flex;
+    justify-content: center;
+  }
+
+  article blockquote > * {
+    margin: auto 0;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 80ch;
+    background-color: theme(colors.dark-blue);
+  }
+
+  article blockquote p {
+    margin: 0;
   }
 </style>

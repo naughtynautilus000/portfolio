@@ -15,6 +15,9 @@ module.exports = {
 			},
 			height: {
 				'header': '75px'
+			},
+			padding: {
+				indent: '40px'
 			}
 		}
 	},

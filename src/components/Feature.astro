@@ -2,20 +2,20 @@
 export interface Props {
   file: Record<string, any>
   alignment: "left" | "right"
+  image: string
 }
 
-const {file, alignment} = Astro.props
+const {file, alignment, image} = Astro.props
 
 const textAlign = alignment == "left" ? "text-start" : "text-end"
 const colStartContent = alignment == "left" ? "col-start-1" : "col-start-6"
 const colStartImage = alignment == "left" ? "col-start-6" : "col-start-1"
 const justifyContent = alignment == "left" ? "justify-start" : "justify-end"
 
-const bg = `bg-[url('/pages/iterative_design/wireframes/login.png')]`
+const imageCSSVar = `url('${image}')`
 ---
-
-<li class={`grid grid-cols-12 h-[250px] gap-[10px] w-full ${textAlign}`}>
-  <div class={`${colStartContent} col-span-7 row-start-1 row-span-full z-10`}>
+<li class={`grid grid-cols-12 h-[350px] gap-[10px] w-full ${textAlign}`}>
+  <div class={`${colStartContent} col-span-7 row-start-1 row-span-full z-10 h-fit`}>
     <h5 class="text-highlight text-lg font-extralight gap-[10px]">Featured Project</h5>
     <h4 class="text-white text-2xl font-bold">{file.frontmatter.title}</h4>
     <p class="bg-dark-blue h-auto p-[15px] rounded-lg shadow-[0_2px_5px_rgb(0,0,0)] my-4">{file.frontmatter.description}</p>
@@ -25,12 +25,13 @@ const bg = `bg-[url('/pages/iterative_design/wireframes/login.png')]`
       )}
     </ul>
   </div>
-  <a href={file.url} class={`${colStartImage} col-span-7 row-start-1 row-span-full ${bg} h-full w-full hover:cursor-pointer transition-all hover:scale-110`}></a>
+  <a href={file.url} class={`${colStartImage} col-span-7 row-start-1 row-span-full h-full w-full bg-cover bg-center bg-blend-multiply rounded-lg hover:scale-105 transition-all`}></a>
 </li>
-<style>
+<style define:vars={{imageCSSVar}}>
   a {
-    background-size: contain;
-    background-blend-mode: multiply;
-    background: theme(colors.highlight);
+    background: var(--imageCSSVar) theme(colors.highlight);
+  }
+  a:hover {
+    background-color: var(--imageCSSVar);
   }
 </style>

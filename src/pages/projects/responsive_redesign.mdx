@@ -13,7 +13,7 @@ export const components = {a: Link}
 
 The Responsive Redesign project is a class project done for CSCI1300: UI/UX. In
 this project, I was tasked with finding a simple website and redesigning the
-site to improve responsiveness.
+site to improve responsiveness. You can view the final redesigned site [here](https://naughtynautilus000.github.io/redesigned-site/).
 
 ## Goals & Requirements
 
@@ -41,4 +41,103 @@ tablet, and desktop.
 
 ## Selecting a Webpage
 
-The website I chose was
+The website I chose was the [Antonio's Pizza Online Ordering Page](https://antonios-providence.foodtecsolutions.com/ordering/menu).
+I chose this page because I wanted to redesign a website that I have used before
+and will probably use again.
+
+Below is an image of the original ordering page. It should be noted that between
+the time I redesigned the page and the time of writing this article, Antonio's
+Pizza redesigned their page, so the link above will not reflect the image shown
+below.
+
+<img src="/pages/responsive_redesign/antonios_before.png" class="w-3/4 border-2 border-blue mx-auto" alt="Before image of Antonio's Pizza ordering page" />
+
+## Problems with the site
+
+The original ordering page has several concerns:
+
+- **_Unclear Hierarchy:_** When looking at all of the menu items, there are
+  headings that separate the catagories of menu items, and then the actual menu
+  items themselves. The font for the categories is different than the menu items
+  but the font for the menu items is bolded and larger than the font for the
+  headings.
+
+- **_Unclear Grouping of Menu Contents:_** The name of each menu item has a grey
+  background. The corresponding description of the name is on a white
+  background. This creates a separation between the names and descriptions of
+  menu items which makes the menu harder to read.
+
+- **_Lack of Semantic HTML:_** Most of the markup for this page consists of
+  nested `<div>` tags used for styling purposes. The actual text is contained in
+  heading tags in a proper hierarchical structure, but theses heading tags are
+  separated between multiple levels of nested `<div>` tags which can still make
+  parsing difficult.
+
+- **_Poor Greyscale Contrast:_** When looking at the page in greyscale. Selected
+  menu items appear very similar unselected items. For certain kinds of
+  colorblindness, this lack of contrast could make the page difficult to read.
+
+### WebAIM Wave Analysis
+
+WebAIM Wave actually gives this site a good rating. The only areas of concern
+were the use of device-dependent event handlers, redundant alternate text, and
+low contrast errors.
+
+The low contrast errors were surprising to me, as I feel that the site has very
+good contrast outside of the greyscale point mentioned above. When looking at
+the site in full color, everything on the page is easy to read.
+
+## Low-Fidelity Prototypes
+
+To create my low-fidelity prototypes of my redesigned page, I used
+[Balsamiq Wireframes](https://balsamiq.com/). I made one prototype for each of
+the three screen sizes with images shown below:
+
+<div class="flex flex-row flex-wrap gap-8 justify-center">
+<img src="/pages/responsive_redesign/wireframes/desktop.png" alt="desktop wireframe" class="w-[600px] border-2 border-blue" />
+<img src="/pages/responsive_redesign/wireframes/tablet.png" alt="tablet wireframe" class="w-[300px] border-2 border-blue" />
+<img src="/pages/responsive_redesign/wireframes/mobile.png" alt="mobile wireframe" class="w-[200px] border-2 border-blue" />
+</div>
+
+## High-Fidelity Style Guide
+
+In preparation for the high fidelity prototypes, I created a style guide, which
+is a collection of UI elements and their different states that all work together
+under one theme. The elements in the style guide are effectively the building
+blocks for a complete UI. I constructed the style guide in [Figma](https://www.figma.com/about/),
+and the style guide is imaged below:
+
+<img src="/pages/responsive_redesign/style_guide.png" alt="style guide" class="w-3/4 mx-auto border-2 border-blue"/>
+
+## High-Fidelity Prototypes
+
+Also in Figma, I created a high-fidelity prototype of each of the three screen
+sizes. It should be noted that for the tablet and mobile views, the cart is
+hidden by default. To see the cart, click on the cart icon on the top left
+corner of the page. To hide the cart again, click somewhere else besides the
+cart icon or the cart itself.
+
+<div class="flex flex-col items-center gap-5">
+<img src="/pages/responsive_redesign/prototypes/desktop_annotated.png" alt="desktop high-fidelity prototype" class="border-2 border-blue" />
+<img src="/pages/responsive_redesign/prototypes/tablet_annotated.png" alt="tablet high-fidelity prototype" class="border-2 border-blue" />
+<img src="/pages/responsive_redesign/prototypes/mobile_annotated.png" alt="mobile high-fidelity prototype" class="border-2 border-blue" />
+</div>
+## Final Redesign
+
+### Link to Deployed Site
+
+You can view the redesigned site [here](https://naughtynautilus000.github.io/redesigned-site/).
+
+### Screenshots of Final Redesign
+
+<div class="flex flex-col items-center gap-8 w-full">
+ <img src="/pages/responsive_redesign/screenshots/desktop.png" class="max-w-[700px] border-2 border-blue" />
+ <div class="flex flex-row gap-3">
+  <img src="/pages/responsive_redesign/screenshots/tablet.png" class="max-w-[450px] border-2 border-blue" />
+  <img src="/pages/responsive_redesign/screenshots/tablet_cart.png" class="max-w-[450px] border-2 border-blue" />
+ </div>
+ <div class="flex flex-row gap-3">
+  <img src="/pages/responsive_redesign/screenshots/mobile.png" class="max-w-[450px] border-2 border-blue" />
+  <img src="/pages/responsive_redesign/screenshots/mobile_cart.png" class="max-w-[450px] border-2 border-blue" />
+ </div>
+</div>

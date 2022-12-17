@@ -39,7 +39,7 @@ const projects = (await Astro.glob("./projects/*.mdx"))
                 {(p.frontmatter.tags || []).map((t: string) => <li>{t}</li>)}
               </ul>
             </td>
-            <td><a href={p.url || "#"}>Link</a></td>
+            <td><a href={p.url || "#"} class="text-highlight">Click Here</a></td>
           </tr>
         )}
       </tbody>

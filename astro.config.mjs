@@ -11,5 +11,7 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react(), mdx()]
+  integrations: [tailwind(), react(), mdx()],
+  site: 'https://naughtynautilus000.github.io/',
+  base: '/portfolio'
 });
